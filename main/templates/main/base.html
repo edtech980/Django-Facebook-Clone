@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .sidenav{
+            height:100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav a{
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidenav a:hover{
+            color:#f1f1f1
+        }
+
+        .main{
+
+            margin-left: 160px;
+            padding: 0px 10px;
+        }
+
+        form{
+           
+            padding: 10px 20px;
+        }
+
+        button{
+            color: white;
+            padding: 5px 10px;
+            font-size: 20px;
+            background-color: rgb(57, 164, 235);
+            border: 0px;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color:rgb(15, 47, 190);
+            cursor: pointer
+        }
+
+        .input_div{
+            background-color: #818181;
+            margin-bottom: 20px;
+        }
+
+        .form_control{
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .input_group{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .create_form{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .create_form > input{
+            font-size: 18px;
+           
+        }
+
+        .create_button{
+            border-radius: 0px;
+        }
+    </style>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+        rel="stylesheet" 
+        href="../static/base.css" 
+        crossorigin="anonymous"
+    />
+    <title>{% block title %}Edward Site{% endblock %}</title>
+</head>
+<body>
+    <div class="sidenav">
+        <a href="/home">Home</a>
+        <a href="/create">Create</a>
+        <a href="/2">View</a>
+    </div>
+    <div id="content", name="content" class="main">
+        
+            {% block content %}
+            {% endblock %}
+        
+            <p>Login <a href="/home">Here</a></p>
+       
+    </div>
+</body>
+</html>
